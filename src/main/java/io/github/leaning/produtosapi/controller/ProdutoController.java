@@ -5,6 +5,8 @@ package io.github.leaning.produtosapi.controller;
 import io.github.leaning.produtosapi.model.Produto;
 import io.github.leaning.produtosapi.repository.ProdutoRepository;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 import java.util.UUID;
 
 
@@ -50,7 +52,7 @@ public class ProdutoController {
     }
 
     @GetMapping
-    public List<Produto> buscar(){
-
+    public List<Produto> buscar(@RequestParam("nome") String nome) {
+       return produtoRepository.findByNome(nome);
     }
 }

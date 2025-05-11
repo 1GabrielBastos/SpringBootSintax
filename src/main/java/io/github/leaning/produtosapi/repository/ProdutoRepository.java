@@ -19,6 +19,8 @@ import java.util.List;
 // String — o tipo da chave primária (neste caso, o campo "id" é uma String)
 public interface ProdutoRepository extends JpaRepository<Produto, String> {
     List<Produto> id(String id);
+
+    List<Produto> findByNome(String nome);
     // Nenhum código adicional é necessário aqui por enquanto.
     // JpaRepository já fornece métodos prontos como:
     // - findAll()      → Buscar todos os produtos
